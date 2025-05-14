@@ -1,0 +1,304 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.whiteboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  width: calc(100% - 350px);
+}
+
+.toolbar {
+  width: 100%;
+  display: flex;
+  background-color: #2c3e50;
+  padding: 10px;
+  color: white;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 120px;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #34495e;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-btn i {
+  font-size: 1.2rem;
+}
+
+.icon-btn:hover {
+  background-color: #1abc9c;
+}
+
+.icon-btn.active {
+  background-color: #1abc9c;
+}
+
+#whiteboard {
+  width: 100%;
+  height: calc(100vh - 120px);
+  position: relative;
+}
+.drag-drop {
+  display: flex;
+}
+.export {
+  display: flex;
+}
+.export-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.export-btn i {
+  font-size: 1.2rem;
+}
+
+.export-btn:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .color-picker label {
+    margin-right: 5px;
+  }
+}
+
+.stroke-width-slider {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.stroke-width-slider input[type="range"] {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.stroke-width-slider label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.color-picker label {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.color-picker input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch {
+  border-radius: 50%;
+}
+
+.color-picker input[type="color"]::-moz-color-swatch {
+  border-radius: 50%;
+}
+
+.icon {
+  width: 100%;
+  height: auto;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #ecf0f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 5px;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+
+  color: black;
+}
+
+.dropdown-item:hover {
+  background-color: #1abc9c;
+}
+
+.admin-controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.admin-action-btn {
+  background-color: #34495e;
+  color: white;
+  border: none;
+  padding: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.admin-action-btn i {
+  margin-right: 5px;
+}
+
+.admin-action-btn:hover {
+  background-color: #1abc9c;
+}
+
+#whiteboard {
+  cursor: default;
+}
+
+#whiteboard.SCRIBBLE {
+  cursor: url("https://cdn-icons-png.flaticon.com/512/1828/1828843.png"), auto;
+}
+
+#whiteboard.CIRCLE {
+  cursor: crosshair;
+}
+
+#whiteboard.ELLIPSE {
+  cursor: crosshair;
+}
+
+#whiteboard.RECTANGLE {
+  cursor: crosshair;
+}
+
+#whiteboard.ARROW {
+  cursor: crosshair;
+}
+
+#whiteboard.STAR {
+  cursor: crosshair;
+}
+
+#whiteboard.RING {
+  cursor: crosshair;
+}
+
+#whiteboard.ARC {
+  cursor: crosshair;
+}
+
+#whiteboard.TEXT {
+  cursor: text;
+}
+
+#whiteboard.LABEL {
+  cursor: text;
+}
+
+#whiteboard.LINE {
+  cursor: crosshair;
+}
+
+#whiteboard.REDO {
+  cursor: pointer;
+}
+
+#whiteboard.UNDO {
+  cursor: pointer;
+}
+
+#whiteboard.GROUPSELECT {
+  cursor: cell;
+}
+
+#whiteboard.CLEAR {
+  cursor: not-allowed;
+}
+
+#whiteboard.DRAG {
+  cursor: grab;
+}
+
+#whiteboard.DELETE {
+  cursor: no-drop;
+}
+
+#whiteboard.IMAGE {
+  cursor: move;
+}
