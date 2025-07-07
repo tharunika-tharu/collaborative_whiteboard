@@ -37,12 +37,10 @@ const mediaCodecs = [
 
 io.on("connection", (socket) => {
   console.log("Connected");
-  // Use middleware to check permission before creating a shape
   worker = createWorker();
   socket.use((packet, next) => {
-    const eventName = packet[0]; // Get event name from packet
+    const eventName = packet[0]; 
 
-    // Only check permission for specific events
     const eventsRequiringPermission = [
       "shapeCreated",
       "shapeUpdated",
